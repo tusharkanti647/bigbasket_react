@@ -1,0 +1,116 @@
+
+
+.cart-table-body{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    border-bottom: #888888 solid 0.5px;
+}
+
+.cart-table-body-left > div {
+    display: flex;
+    justify-content: space-around;
+  }
+  .cart-table-body-left  img{
+    display: flex;
+    /* justify-content: space-; */
+    width: 20%;
+  }
+  .cart-table-body-left,.cart-table-body-right h4{
+    color: #888888;
+  }
+
+  .cart-table-body-right {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding-left: 5px ;
+    padding-right: 5%;
+  }
+  .item-count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item-count #quantity_input_box{
+    /* width: 28px; */
+    padding: 0 10px;
+    height: 29px;
+    border-bottom: solid 2px;
+    border-top: solid 2px;
+    font-size: 20px;
+    font-weight: 500;
+
+    padding-left: 4%;
+  }
+  .item-count button{
+    /* margin-top: 30px; */
+    background-color: #EEEEEE;
+    cursor: pointer;
+  }
+
+
+  .cart-table-body-right #remove-item-icon{
+    display: block;
+  }
+  .cart-table-body-right #maximum-price{
+    display: none;
+  }
+
+  .cart-table-body-right > h3:last-child {
+    color: #E36C60;
+  }
+  
+  @media (max-width: 730px) {
+    .cart-table-body-right div:first-child{
+      display: none;
+    }
+
+    .item-count input{
+      width: 20px;
+      height: 21px;
+
+      /* padding-left: 4%; */
+    }
+    .item-count button{
+      /* margin-top: 30px; */
+      width: 27px;
+      height: 27px;
+      padding: 0px;
+
+    }
+    .cart-table-body-right #remove-item-icon{
+      display: none;
+    }
+    .cart-table-body-right #maximum-price{
+      display: block;
+    }
+    .cart-table-body-left img{
+      width: 25%;
+    }
+    
+  }
+
+  @media (max-width: 550px) {
+ 
+    .cart-table-body-left{
+      flex:1;
+    }
+    .cart-table-body-right > h3:last-child {
+      display: none;
+    }
+    .cart-table-body-left  img{
+      width: 40%;
+      height: 70%;
+    }
+    .cart-table-body-right{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: .4;
+    }
+
+  }

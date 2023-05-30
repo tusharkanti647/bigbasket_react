@@ -1,0 +1,145 @@
+.your-item {
+    margin-top: 50px;
+    width: 95%;
+    font-size: 15px;
+    color: #888888;
+    border-bottom: solid 0.5px #888888;
+  }
+  
+  .cart-table-heder {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    background-color: #555555;
+    color: white;
+    font-size: 10px;
+  }
+  
+  .cart-table-heder-left > div {
+    display: flex;
+    justify-content: center;
+  }
+  .cart-table-heder-right {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5%;
+  }
+  .cart-table-heder-right > h3:last-child {
+    color: #e36c60;
+  }
+  
+  .cart-bottom-part {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+  }
+  
+  /* .cart-bottom-part-button-wrapper{
+      display: flex;
+      flex-direction: column;
+      
+    } */
+  .cart-buttom-part-botton-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px 10%;
+  }
+  .cart-buttom-part-botton-wrapper > Button{
+    border: solid 0.5px #84C225;
+   color: #888888;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px -50px 36px -28px inset;
+  }
+  .cart-buttom-part-botton-wrapper > Button:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset;
+  }
+  
+  .cart-bottom-part-right{
+    border: solid 0.5px #888888;
+    width: 45%;
+    color:#888888;
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .save-bill-charges {
+    display: flex;
+    
+  }
+  .bill-charges > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bill-charges > div:last-child {
+    font-size: x-large;
+    font-weight: 500;
+    color: black;
+    border-top: #888888 0.5px solid;
+  }
+  .bill-charges > div:last-child > p{
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .bill-charges-save{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    border-left: #888888 0.5px solid;
+    
+  }
+  
+  .bill-charges-save>p{
+    color: #e36c60;
+    text-align: center;
+    font-weight: 700;
+  }
+  .cart-bottom-part-right > div:last-child{
+    display: flex;
+   margin: 30px 10%;
+    justify-content: flex-end;
+  }
+  .cart-bottom-part-right > div Button{
+    background-color: #FDE67B;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px -50px 36px -28px inset;
+    color: #888888;
+    height: 50px;
+    width: 200px;
+    
+  }
+  .cart-bottom-part-right > div Button:hover {
+    background-color: #FDE67B;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset;
+  }
+  
+  @media (max-width: 730px) {
+    .cart-table-heder-right h3:first-child{
+      display: none;
+    }
+    .bill-charges > div:last-child > p{
+      margin-top: 13px;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 550px){
+    .cart-bottom-part{
+      flex-direction: column;
+    }
+    .cart-bottom-part-right{
+      width: 100%;
+    }
+    .cart-table-heder{
+      display: none;
+    }
+    .cart-buttom-part-botton-wrapper {
+      margin: 30px 5%;
+      flex-direction: row;
+    }
+    .cart-buttom-part-botton-wrapper Button{
+      font-size: 10px;
+    }
+  }

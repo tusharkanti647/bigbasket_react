@@ -1,0 +1,14 @@
+
+
+.banner-carousel{
+    margin: auto;
+    padding: auto;
+    width: 95%;
+}
+
+.banner-carousel .banner-img-slide{
+    /* margin: auto;
+    padding: auto; */
+    width: 100%;
+    border: solid 0.5px #DEDEDE;
+}

@@ -1,0 +1,253 @@
+.upperPart img {
+    border: 1px black;
+  }
+  
+  .sidebar-category h4 {
+    padding-bottom: 7px;
+    border-bottom: #888888 solid 0.5px;
+  }
+  .sidebar-category p {
+    padding-left: 30px; 
+  }
+  
+  /* .upperPart-right{
+  mar
+  } */
+  .upperPart-right p {
+    margin: 0px;
+    font-size: 12px;
+    color: #888888;
+  }
+  .upperPart-right h4 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .upperPart-right #price {
+    margin: 0px;
+  }
+  .upperPart-right p > span {
+    color: #d15d39;
+  }
+  .upperPart-right #price > span {
+    font-size: 14px;
+    font-weight: 150;
+  }
+  .aboutProduct-rating {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background-color: #e3ebda;
+    width: 30px;
+    margin: 10px 0px;
+  }
+  .upperPart-right .aboutProduct-button-wrapper {
+    display: flex;
+  }
+  .upperPart-right .aboutProduct-button-wrapper > input {
+    width: 40px;
+    height: 34px;
+    border: #888888 0.5px solid;
+    border-radius: 6px;
+    color: #888888;
+    /* align-items: center; */
+    text-align: center;
+  }
+  .upperPart-right .aboutProduct-button-wrapper > .aboutProduct-add-button {
+    width: 170px;
+    height: 39px;
+    margin-left: 3%;
+    border: #888888 0.5px solid;
+    border-radius: 6px;
+    color: white;
+    background-color: #84c225;
+    cursor: pointer;
+  }
+  .upperPart-right .aboutProduct-button-wrapper > .aboutProduct-save-button {
+    width: 90px;
+    height: 39px;
+    margin-left: 3%;
+    border: #888888 0.5px solid;
+    border-radius: 6px;
+    color: #888888;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .upperPart-right #delhivery-time {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    padding: 20px 0px;
+  }
+  .upperPart-right > h4:nth-child(5) {
+    color: #888888;
+    font-size: 17px;
+    font-weight: 100;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  
+  .upperPart-right > .product-weight-value-slect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 15px;
+    border: solid #888888 0.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* background-color: ; */
+    /* padding: 0px 30px; */
+    /* font-size: 17px;
+    font-weight: 100;
+    padding-top: 0px;
+    margin-top: 0px; */
+  }
+  .product-weight-value-slect > #aboutProduct-price-contaner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+  }
+  
+  .upperPart-right > .product-weight-value-slect div:nth-child(1) {
+    /* width: 20%; */
+    padding: 18px 0px;
+    padding-left: 5%;
+    /* border: 1px solid black; */
+  }
+  .upperPart-right > .product-weight-value-slect div:nth-child(2) {
+    /* color: #84C225; .product-weight-value-slect input:last-child */
+    padding: 18px 0px;
+    padding-right: 5%;
+    text-align: center;
+    /* color: red; */
+    /* border: 1px solid black; */
+  }
+  .upperPart-right > .product-weight-value-slect div > span:nth-child(2) {
+    /* color: #84C225; .product-weight-value-slect input:last-child */
+    /* padding: 18px 0px;
+    text-align: center; */
+    padding-left: 8px;
+    color: #888888;
+    /* border: 1px solid black; */
+  }
+  .upperPart-right > .product-weight-value-slect div > span:nth-child(3) {
+    /* color: #84C225; .product-weight-value-slect input:last-child */
+    /* padding: 18px 0px;
+    text-align: center; */
+    padding-left: 8px;
+    color: #d15d39;
+  
+    /* border: 1px solid black; */
+  }
+  /* .upperPart-right  #input {
+    background-color: #84C225;
+    height: 100px;
+    border: 1px solid black;
+  } */
+  
+  /* --------------------------------------------------------------------- */
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    /* -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -21px;
+    left: 0;
+    height: 53px;
+    width: 34px;
+    background-color: #ccc;
+    z-index: -1;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  /* On mouse-over, add a grey background color */
+  /* .container:hover input ~ .checkmark {
+    background-color:;
+  } */
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #9cc63d;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 15px;
+    top: 15px;
+    width: 5px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  /* --------------------------------------------------------------------- */
+  
+  .lowerPart h4 {
+    padding-bottom: 10px;
+    font-size: 23px;
+    font-weight: 450;
+    border-bottom: solid 0.5px #888888;
+  }
+  
+  
+  /* --------------------------------------------------------------------- */
+  @media (max-width: 900px) {
+    .About-product-main img {
+      width: 50%;
+    }
+  }
+  @media (max-width: 750px) {
+    .About-product-main img {
+      width: 35%;
+      height: 20%;
+    }
+  }
+  @media (max-width: 560px) {
+    .About-product-main .upperPart {
+      flex-direction: column;
+    }
+    .About-product-main img {
+      width: 100%;
+      height: 20%;
+    }
+  }

@@ -1,0 +1,17 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sixItem{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+}
+.sixItem img{
+    width: 155px;
+    cursor: pointer;
+}
