@@ -14,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Lodar from "../lodar/Lodar";
 import { isAddProductReducer } from "../../redux_toolkit/slices/functionSlices";
+import Tostyfy from "../tostyfy/Tostyfy";
 
 
 function Basket() {
@@ -26,6 +27,11 @@ function Basket() {
     const [totalSavings, setTotalSavings] = useState(0);
     const [basketProductArr, setBasketProductArr] = useState([]);
     const [isLodar, setIsLodar] = useState(false);
+    const [isShowTostyfy, setShowTostyfy] = useState(false);
+    const [satingTostyfy, setSatingTostyfy] = useState({
+        message: "",
+        severity: ""
+    });
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -40,9 +46,10 @@ function Basket() {
                 method: "GET",
                 headers: { Authorization: localStorage.getItem("token") }
             });
-            if (response.statusText === "Unauthorized") {
-                console.log("hello");
-                navigate("./");
+            console.log(response.status)
+            if (response.status !== 200) {
+                navigate("/");
+                setIsLodar(false);
                 return;
             } else {
                 const data = await response.json();
@@ -86,12 +93,29 @@ function Basket() {
             headers: { "Authorization": localStorage.getItem("token") }
         });
         setBasketProductArr([]);
-        dispatch((isAddProductReducer(true)))
+        dispatch((isAddProductReducer(true)));
+        setSatingTostyfy({ ...satingTostyfy, message: "Product remove from basket successfully.", severity: "warning" });
+        setShowTostyfy(true);
         const data = await respons.json();
         setIsLodar(false);
     }
 
 
+        //checkOut function from the basket
+    //----------------------------------------------------------------------------------------
+    const handelCheckOut = async () => {
+        setIsLodar(true);
+        const respons = await fetch("https://bigbusket-api.onrender.com/empty-basket", {
+            method: "PUT",
+            headers: { "Authorization": localStorage.getItem("token") }
+        });
+        setBasketProductArr([]);
+        dispatch((isAddProductReducer(true)));
+        setSatingTostyfy({ ...satingTostyfy, message: "you are successfully bye products.", severity: "success" });
+        setShowTostyfy(true);
+        const data = await respons.json();
+        setIsLodar(false);
+    }
 
     if (isLodar) {
         return (
@@ -102,6 +126,7 @@ function Basket() {
     if (basketProductArr.length <= 0) {
         return (
             <Box className="cart-buttom-part-botton-wrapper">
+                {isShowTostyfy ? <Tostyfy satingTostyfy={satingTostyfy} /> : ""}
                 <h2>OOPS......</h2>
                 <h3>Your Basket is empty.</h3>
                 <h3>Please continue to shopping.</h3>
@@ -161,7 +186,7 @@ function Basket() {
                     </Box>
                 </Box>
                 <div>
-                    <Button>CHECKOUT <ArrowCircleRightIcon /> </Button>
+                    <Button onClick={handelCheckOut}>CHECKOUT <ArrowCircleRightIcon /> </Button>
                 </div>
             </Box>
         </Box>

@@ -9,6 +9,7 @@ import { TextField } from '@mui/material';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Lodar from "../lodar/Lodar";
+import Tostyfy from "../tostyfy/Tostyfy";
 //import Tostyfy from "../tostyfy/Tostyfy";
 
 const style = {
@@ -27,14 +28,19 @@ const style = {
 };
 
 
-export default function SignIn() {
+export default function SignIn({handleCloseMenu}) {
     const [open, setOpen] = useState(false);
     //const [cookieValue, setCookieValue] = useState('');
     const [isLodar, setIsLodar] = useState(false);
     //const [isShowTostyfy, setShowTostyfy] = useState(false);
+    const [isShowTostyfy, setShowTostyfy] = useState(false);
     const [signInData, setSignInData] = useState({
         password: "",
         email: ""
+    });
+    const [satingTostyfy, setSatingTostyfy] = useState({
+        message: "",
+        severity: ""
     });
 
 
@@ -44,6 +50,8 @@ export default function SignIn() {
         setOpen(true);
     };
     const handleClose = () => {
+        console.log("handleClose")
+        handleCloseMenu();
         setOpen(false);
     };
     //-------------------------------------------------------------------------
@@ -72,17 +80,20 @@ export default function SignIn() {
             body: JSON.stringify({ email, password })
         });
 
-        //console.log(respons.headers);
+        //console.log(respons);
 
-        const data = await respons.json();
         if (respons.status === 400 || !signInData) {
-            alert("no data");
-        } else {
+            alert("no data match");
+            setIsLodar(false);
+        }  else {
             //setShowTostyfy(true);
             alert("user sucessfull signin");
             //console.log(data);
+            const data = await respons.json();
             localStorage.setItem("token", data.token);
             window.location.reload();
+            setSatingTostyfy({ ...satingTostyfy, message: "product add to basket successfully.", severity: "success" });
+            setShowTostyfy(true);
             //navigate to home page
             //handleClose();
 
@@ -96,22 +107,22 @@ export default function SignIn() {
         //setShowTostyfy(false);
     }
 
-//  if(isShowTostyfy){
-//     return (
-//         <Tostyfy />
-//     ) 
-//  }   
-if(isLodar){
+    //  if(isShowTostyfy){
+    //     return (
+    //         <Tostyfy />
+    //     ) 
+    //  }   
+    if (isLodar) {
+        return (
+            <Lodar />
+        )
+    }
+
+    //console.log(cookieValue);
     return (
-        <Lodar />
-    )
-}
-    
-//console.log(cookieValue);
-    return (
-        <div>
-            
-            <Button onClick={handleOpen}>login</Button>
+        <>
+
+            <div onClick={handleOpen}>login</div>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -133,7 +144,7 @@ if(isLodar){
                         noValidate
                         autoComplete="off"
                     >
-                        
+
                         <div className='login-modal'>
                             <h2>SignIn</h2>
                             <TextField
@@ -172,9 +183,9 @@ if(isLodar){
 
                 </Box>
 
-                
+
             </Modal>
-            {/* {isShowTostyfy?<Tostyfy />:""} */}
-        </div>
+            {isShowTostyfy ? <Tostyfy satingTostyfy={satingTostyfy} /> : ""}
+        </>
     );
 }

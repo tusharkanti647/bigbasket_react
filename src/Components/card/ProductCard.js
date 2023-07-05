@@ -165,7 +165,7 @@ if(isLodar){
                 </Typography>
                 <CardContent sx={{ pb: "0px", pt: "1px" }}>
 
-                    <Link to={link} >
+                    <Link to={link} style={{ textDecoration: 'none', color:  "#888888" }} >
                         <Typography sx={{ fontSize: 12 }} variant="h6" component="div">
                             {product.titel}
                         </Typography>

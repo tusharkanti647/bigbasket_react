@@ -96,7 +96,7 @@ function SignUp() {
             autoComplete="on"
         >
             <div className='login-modal'>
-                <h2>SignIn</h2>
+                <h2>SignUp</h2>
 
                 <TextField
                     error={false}

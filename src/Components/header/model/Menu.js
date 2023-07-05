@@ -22,7 +22,7 @@ export default function Menu({ isLogIn }) {
     const handleOpen = () => {
         setOpen(true);
     };
-    const handleClose = () => {
+    const handleCloseMenu = () => {
         setOpen(false);
     };
     //-------------------------------------------------------------------------
@@ -37,7 +37,7 @@ export default function Menu({ isLogIn }) {
     //-------------------------------------------------------------------------
     const handelSignOut = () => {
         localStorage.removeItem("token");
-        handleClose();
+        handleCloseMenu();
         navigate("/");
         window.location.reload();
     }
@@ -60,7 +60,7 @@ export default function Menu({ isLogIn }) {
 
             <Modal
                 open={open}
-                onClose={handleClose}
+                onClose={handleCloseMenu}
 
             // aria-labelledby="parent-modal-title"
             // aria-describedby="parent-modal-description"
@@ -70,10 +70,10 @@ export default function Menu({ isLogIn }) {
                     <p id="parent-modal-description">
                     Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                     </p> */}
-                    <Link to="/" onClick={handleClose}>
-                        <div>Home</div>
+                    <Link to="/" style={{ textDecoration: 'none' }}  onClick={handleCloseMenu}>
+                        <div >Home</div>
                     </Link>
-                    {isLogIn ? <div onClick={handelSignOut}>SignOut</div> : <SignIn />}
+                    {isLogIn ? <div onClick={handelSignOut}>SignOut</div> : <SignIn handleCloseMenu={handleCloseMenu} />}
                     <div>User</div>
                 </Box>
 
